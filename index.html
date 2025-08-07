@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>gift</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Raksha Bandhan!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #fff5f5;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 3rem;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s;
+        }
+
+        .sister-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #f8bbd0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            animation: bounce 2s infinite alternate;
+        }
+
+        .message {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #555;
+            animation: slideUp 1.5s;
+            position: relative;
+        }
+
+        .message::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid white;
+        }
+
+        .btn {
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #c2185b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(216, 27, 96, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .rakhi {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 5px;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .footer {
+            margin-top: 50px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .sister-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .message {
+                padding: 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Raksha Bandhan!</h1>
+    
+        <img src="Didi2.jpg" alt="Sister" class="sister-img" id="sisterImage">
+        
+        <div class="message" id="message">
+            Dear Sister,<br><br>
+            On this special day, I want to thank you for always being there for me. 
+            You're not just my sister but also my best friend. 
+            May our bond grow stronger with each passing year.<br><br>
+            Happy Rakhi
+        </div>
+        
+        <button class="btn" id="surpriseBtn">Click for a Surprise!</button>
+        
+        <div class="footer">
+            Made with ❤️ for the best sister in the world!
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const surpriseBtn = document.getElementById('surpriseBtn');
+            const message = document.getElementById('message');
+            const sisterImage = document.getElementById('sisterImage');
+         
+            createRakhis();
+            
+            surpriseBtn.addEventListener('click', function() {
+               
+                message.innerHTML = `
+                    Dear Sister,<br><br>
+                    You've always been my protector, my guide, and my partner in crime. 
+                    No matter where life takes us, this bond will always remain special.<br><br>
+                    Here's a virtual rakhi for you! 💖<br><br>
+                    Love you always!
+                `;
+                
+         
+                createFireworks();
+                
+                
+                si  
+                surpriseBtn.disabled = true;
+                
+                sterImage.style.animation = 'float 3s ease-in-out infinite';
+                
+               
+                surpriseBtn.textContent = 'Hope you liked it!';
+                surpriseBtn.style.backgroundColor = '#888';
+            });
+            
+            function createRakhis() {
+                const colors = ['#d81b60', '#8e24aa', '#3949ab', '#039be5', '#00897b', '#7cb342', '#fdd835', '#fb8c00'];
+                const rakhiDesigns = ['🎀', '🌸', '💮', '🏵️', '💝', '💖', '💗', '💓'];
+                
+                for (let i = 0; i < 15; i++) {
+                    const rakhi = document.createElement('div');
+                    rakhi.className = 'rakhi';
+                    rakhi.textContent = rakhiDesigns[Math.floor(Math.random() * rakhiDesigns.length)];
+                    rakhi.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    rakhi.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                    rakhi.style.left = Math.random() * 100 + 'vw';
+                    rakhi.style.top = Math.random() * 100 + 'vh';
+                    document.body.appendChild(rakhi);
+                    
+                    animateRakhi(rakhi);
+                }
+            }
+            
+            function animateRakhi(rakhi) {
+                let x = parseFloat(rakhi.style.left);
+                let y = parseFloat(rakhi.style.top);
+                let xSpeed = (Math.random() - 0.5) * 2;
+                let ySpeed = (Math.random() - 0.5) * 2;
+                let rotation = 0;
+                let rotationSpeed = (Math.random() - 0.5) * 10;
+                
+                rakhi.style.opacity = '0.7';
+                
+                function move() {
+                    x += xSpeed;
+                    y += ySpeed;
+                    rotation += rotationSpeed;
+                    
+                    
+                    if (x < 0 || x > window.innerWidth) xSpeed *= -1;
+                    if (y < 0 || y > window.innerHeight) ySpeed *= -1;
+                    
+                    rakhi.style.left = x + 'px';
+                    rakhi.style.top = y + 'px';
+                    rakhi.style.transform = `rotate(${rotation}deg)`;
+                    
+                    requestAnimationFrame(move);
+                }
+                
+                move();
+            }
+            
+            function createFireworks() {
+                const colors = ['#ff0000', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#ff00ff'];
+                
+                for (let i = 0; i < 30; i++) {
+                    setTimeout(() => {
+                        const firework = document.createElement('div');
+                        firework.className = 'firework';
+                        firework.style.left = Math.random() * 100 + 'vw';
+                        firework.style.top = Math.random() * 100 + 'vh';
+                        firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                        document.body.appendChild(firework);
+                        
+                     
+                        let size = 5;
+                        let opacity = 1;
+                        
+                        const explode = setInterval(() => {
+                            size += 2;
+                            opacity -= 0.02;
+                            
+                            firework.style.width = size + 'px';
+                            firework.style.height = size + 'px';
+                            firework.style.opacity = opacity;
+                            firework.style.boxShadow = `0 0 ${size/2}px ${size/4}px ${firework.style.backgroundColor}`;
+                            
+                            if (opacity <= 0) {
+                                clearInterval(explode);
+                                firework.remove();
+                            }
+                        }, 20);
+                    }, i * 200);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
